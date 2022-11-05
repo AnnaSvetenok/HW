@@ -1,0 +1,174 @@
+import java.util.ArrayList;
+
+public class Car {
+    private String colour; //цвет
+    private int max_speed; //максимальная скорость
+    private String transmission; //тип коробки передач
+    private int curr_speed; //текущая скорость
+    private int cost; //цена
+    private int speed; //переменная скорости для методы accelerate
+
+    public Car(String colour, int max_speed, String transmission, int curr_speed, int cost) {
+        this.colour = colour;
+        this.max_speed = max_speed;
+        this.transmission = transmission;
+        this.curr_speed = curr_speed;
+        this.cost = cost;
+    }
+
+    public String getColour() {
+        return colour;
+    }
+
+    public int getMax_speed() {
+        return max_speed;
+    }
+
+    public String getTransmission() {
+        return transmission;
+    }
+
+    public int getCurr_speed() {
+        return curr_speed;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public static void main(String[] args) {
+        BMW_X5 BMW = new BMW_X5("Red", 120, "Автомат", 70, 500000, 2018,420);
+
+        BMW.Start();
+        BMW.Stop();
+        BMW.accelerate(15);
+        BMW.getInfo();
+
+        Toyota_Camry Toyota = new Toyota_Camry("White", 110, "Механика", 60, 300000, 777, 1500);
+
+        Toyota.Start();
+        Toyota.Stop();
+        Toyota.accelerate(20);
+        Toyota.getInfo();
+
+        Garage Garage1 = new Garage(6, "BMW", 5);
+        Garage Garage2=new Garage(3,"Toyota",3);
+
+        Garage1.get_cars();
+        Garage2.get_cars();
+    }
+
+    public String Start() {
+        System.out.println();
+        return "";
+    }
+
+    public String Stop() {
+        System.out.println();
+        return "";
+    }
+
+    public int accelerate(int speed) {
+        System.out.println();
+        return 0;
+    }
+
+}
+
+class BMW_X5 extends Car {
+    private int year; //дополнительный атрибут, год машины
+    private int trunk; //дополнительный атрибут, объем багажника
+
+    public BMW_X5(String colour, int max_speed, String transmission, int curr_speed, int cost, int year, int trunk) {
+        super(colour, max_speed, transmission, curr_speed, cost);
+        this.year = year;
+        this.trunk = trunk;
+    }
+
+    //переопределяем методы start,stop,accelerate для класса BMW
+    @Override
+    public String Start(){
+        System.out.println("BMW поехала");
+        return "";
+    }
+
+    @Override
+    public String Stop(){
+        System.out.println("BMW остановилась");
+        return "";
+    }
+
+    @Override
+    public int accelerate(int speed){
+        System.out.println("Скорость BMW увеличилась на " + speed);
+        return 0;
+    }
+
+    public void getInfo(){
+        System.out.println("Дополнительные характеристики BMW:\nГод выпуска: " + year +"\nОбъем багажника: " +trunk+ "л");
+    }
+}
+
+class Toyota_Camry extends Car {
+    private int car_number;
+    private int weight;
+
+    public Toyota_Camry(String colour, int max_speed, String transmission, int curr_speed, int cost, int car_number, int weight) {
+        super(colour, max_speed, transmission, curr_speed, cost);
+        this.car_number = car_number; //дополнительный атрибут, номер машины
+        this.weight = weight; //дополнительный атрибут, вес машины(в кг)
+    }
+
+    //переопределяем методы start,stop,accelerate для класса BMW
+    @Override
+    public String Start() {
+        System.out.println("Toyota поехала");
+        return "";
+    }
+
+    @Override
+    public String Stop() {
+        System.out.println("Toyota остановилась");
+        return "";
+    }
+
+    @Override
+    public int accelerate(int speed) {
+        System.out.println("Скорость Toyota увеличилась на " + speed);
+        return 0;
+    }
+
+    public void getInfo(){
+        System.out.println("Дополнительные характеристики Toyota:\nНомер машины: " + car_number +"\nВес машины: " +weight+ "кг");
+    }
+}
+
+class Garage {
+    int max_cars;
+    String cars;
+    int amount;
+
+    ArrayList<Integer> amount_cars = new ArrayList<>();
+
+    public Garage(int max_cars, String cars, int amount) {
+        this.max_cars = max_cars;
+        this.cars = cars;
+        this.amount = amount;
+    }
+
+    //метод, который выводит на консоль построчно автомобили и их количество, отсортированных по количеству в гараже
+    public String get_cars() {
+        amount_cars.add(amount);
+
+        for (int values : amount_cars) {
+            System.out.println("Машина: " + cars + ", кол-во в гараже: " + values);
+        }
+        return "";
+    }
+}
+
+
