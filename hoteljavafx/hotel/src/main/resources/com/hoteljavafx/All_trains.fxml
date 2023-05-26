@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.hoteljavafx.AllTrainsController"
+            prefHeight="400.0" prefWidth="624.0">
+    <children>
+        <!-- Таблица в которую мы будем выводит наш pojo -->
+        <TableView fx:id="tableTrains" layoutX="12.0" layoutY="62.0" prefHeight="324.0" prefWidth="600.0">
+            <columns>
+                <!-- Колонки таблицы -->
+                <TableColumn prefWidth="80.0" text="Наименование поезда" fx:id="name" />
+                <TableColumn prefWidth="110.0" text="Тип поезда" fx:id="type" />
+                <TableColumn prefWidth="150.0" text="Количество вагонов" fx:id="carriages" />
+                <TableColumn prefWidth="193.0" text="Количество мест в вагоне" fx:id="seats" />
+            </columns>
+        </TableView>
+        <Label layoutX="14.0" layoutY="18.0" text="Список всех поездов:">
+            <font>
+                <Font name="Verdana" size="24.0" />
+            </font>
+        </Label>
+        <Button id="backButton" fx:id="backButton" mnemonicParsing="false" onAction="#switchToPrimary" prefHeight="25.0" prefWidth="132.0" layoutX="220" layoutY="400" text="Назад" />
+        <Button id="backButton" fx:id="addButton" mnemonicParsing="false" onAction="#switchToAddTrain" prefHeight="25.0" prefWidth="132.0" layoutX="370" layoutY="400" text="Добавить поезд" />
+    </children>
+</AnchorPane>
