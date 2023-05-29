@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.trainjavafx.FutureTrainsController"
+            prefHeight="400.0" prefWidth="800.0">
+    <children>
+        <!-- Таблица в которую мы будем выводит наш pojo -->
+        <TableView fx:id="futureTrains" layoutX="12.0" layoutY="62.0" prefHeight="324.0" prefWidth="600.0">
+            <columns>
+                <!-- Колонки таблицы -->
+                <TableColumn prefWidth="120.0" text="Откуда" fx:id="cityFrom" />
+                <TableColumn prefWidth="120.0" text="Куда" fx:id="cityTo" />
+                <TableColumn prefWidth="110.0" text="Дата отправления" fx:id="departureDate" />
+                <TableColumn prefWidth="110.0" text="Время отправления" fx:id="departureTime" />
+                <TableColumn prefWidth="100.0" text="Дата приезда" fx:id="arrivalDate" />
+                <TableColumn prefWidth="100.0" text="Время приезда" fx:id="arrivalTime" />
+                <TableColumn prefWidth="150.0" text="Количество мест в поезде" fx:id="seats" />
+                <TableColumn prefWidth="193.0" text="Количество свободных мест" fx:id="emptySeats" />
+            </columns>
+        </TableView>
+        <Label layoutX="14.0" layoutY="18.0" text="Список всех будущих поездов:">
+            <font>
+                <Font name="Verdana" size="24.0" />
+            </font>
+        </Label>
+        <Button id="backButton" fx:id="backButton" mnemonicParsing="false" onAction="#switchToPrimary" prefHeight="25.0" prefWidth="132.0" layoutX="240" layoutY="400" text="Назад" />
+    </children>
+
+</AnchorPane>
